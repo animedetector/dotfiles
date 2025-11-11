@@ -1,0 +1,18 @@
+[user]
+  name = Peter Smirnov
+  email = peter@animedetector.dev
+  signingkey = ~/.ssh/id_ed25519.pub
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  allowedSignersFile = ~/.config/git/allowed_signers
+[commit]
+  gpgsign = true
+[tag]
+  gpgsign = true
+[init]
+  defaultBranch = master
+[core]
+  autocrlf = input
+[pull]
+  rebase = true
