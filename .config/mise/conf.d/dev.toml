@@ -6,9 +6,11 @@ tree-sitter = "latest"
 lua-language-server = "latest"
 stylua = "latest"
 
-"pipx:ty" = "latest"
-ruff = "latest"
-
 "npm:@typescript/native-preview" = "latest"
 "npm:@tailwindcss/language-server" = "latest"
 biome = "latest"
+
+"pipx:ty" = "latest"
+ruff = "latest"
+
+zls = "0.15"
