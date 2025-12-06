@@ -2,11 +2,12 @@ font-family = "Inconsolata LGC Nerd Font"
 font-size = 16
 
 fullscreen = true
-macos-non-native-fullscreen = true
 theme = tokyonight
 window-padding-x = 12
 window-padding-y = 36, 0
-background-opacity = 0.85
+background-image = ~/Pictures/ghostty.png
+background-image-fit = cover
+background-image-opacity = 0.25
 cursor-style = block
 
 macos-option-as-alt = true
