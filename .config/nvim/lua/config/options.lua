@@ -32,3 +32,8 @@ opt.number = true
 opt.signcolumn = "yes"
 opt.cursorline = true
 opt.inccommand = "split"
+
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
+vim.keymap.set({ "n", "v" }, "<leader>P", '"+P')
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
