@@ -1,14 +1,13 @@
 font-family = "IosevkaTerm Nerd Font"
 font-size = 20
 
-fullscreen = true
 theme = tokyonight
-window-decoration = false
 window-padding-x = 12
 window-padding-y = 20, 0
 background-opacity = 0.75
 cursor-style = block
 
+macos-titlebar-style = tabs
 macos-option-as-alt = true
 keybind = shift+enter=text:\n
 
