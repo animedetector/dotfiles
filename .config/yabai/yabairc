@@ -1,0 +1,19 @@
+yabai -m config layout bsp
+yabai -m config --space 1 layout float
+
+yabai -m config top_padding    14
+yabai -m config bottom_padding 14
+yabai -m config left_padding   14
+yabai -m config right_padding  14
+yabai -m config window_gap     7
+
+yabai -m config external_bar main:28:0
+
+options=(
+	style=round
+	active_color=0xffbb9af7
+	inactive_color=0xffc0caf5
+	width=4.0
+	hidpi=on
+)
+borders "${options[@]}" &

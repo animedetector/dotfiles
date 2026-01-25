@@ -1,0 +1,81 @@
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+sketchybar --bar \
+	color=0x00000000 \
+	height=28 \
+	padding_left=14 \
+	padding_right=14
+
+default=(
+	icon.padding_right=2
+	icon.font="IosevkaTerm Nerd Font:Regular:18.0"
+	label.padding_left=2
+	label.font="TX-02:Regular:18.0"
+	background.corner_radius=8
+)
+sketchybar --default "${default[@]}"
+
+SPACE_ICONS=("􀏃" "􀩼" "􀤆" "4" "5" "6")
+for i in "${!SPACE_ICONS[@]}"
+do
+	sid="$(($i+1))"
+	space=(
+		space="$sid"
+		icon="${SPACE_ICONS[i]}"
+		icon.color=0xFFC0CAF5
+		icon.highlight_color=0xFF414868
+		icon.padding_left=4
+		icon.padding_right=8
+		label.drawing=off
+		background.color=0xFFBB9AF7
+		background.padding_right=2
+		script="$PLUGIN_DIR/space.sh"
+	)
+	sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
+done
+
+left_default=(
+	icon.color=0xFF7DCFFF
+	label.color=0xFFC0CAF5
+)
+sketchybar --default "${left_default[@]}"
+
+sketchybar --add item app left \
+	--set app \
+		script="$PLUGIN_DIR/front_app.sh" \
+		icon="􁍅" \
+		background.padding_left=8 \
+	--subscribe app front_app_switched
+
+right_default=(
+	icon.color=0xFF414868
+	icon.padding_left=8
+	label.color=0xFF414868
+	label.padding_right=8
+	background.border_width=2
+	background.padding_left=4
+)
+sketchybar --default "${right_default[@]}"
+
+sketchybar --add item clock right \
+	--set clock \
+		update_freq=10 \
+		script="$PLUGIN_DIR/clock.sh" \
+		icon="􀐬" \
+		label.padding_right=16 \
+		background.color=0xFF7AA2F7
+
+sketchybar --add item volume right \
+	--set volume \
+		script="$PLUGIN_DIR/volume.sh" \
+		background.color=0xFF73DACA \
+	--subscribe volume volume_change
+
+sketchybar --add item battery right \
+	--set battery \
+		update_freq=120 \
+		script="$PLUGIN_DIR/battery.sh" \
+		background.color=0xFFE0AF68 \
+	--subscribe battery system_woke power_source_change
+
+sketchybar --update
