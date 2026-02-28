@@ -8,14 +8,14 @@ sketchybar --bar \
 
 default=(
 	icon.padding_right=2
-	icon.font="IosevkaTerm Nerd Font:Regular:18.0"
+	icon.font="TX-02:Regular:18.0"
 	label.padding_left=2
 	label.font="TX-02:Regular:18.0"
 	background.corner_radius=8
 )
 sketchybar --default "${default[@]}"
 
-SPACE_ICONS=("􀏃" "􀩼" "􀤆" "4" "5" "6")
+SPACE_ICONS=("􀏃" "􀩼" "􀤆" "􀜅")
 for i in "${!SPACE_ICONS[@]}"
 do
 	sid="$(($i+1))"
@@ -27,16 +27,20 @@ do
 		icon.padding_left=4
 		icon.padding_right=8
 		label.drawing=off
-		background.color=0xFFBB9AF7
+		background.color=0xFF24283B
 		background.padding_right=2
 		script="$PLUGIN_DIR/space.sh"
 	)
-	sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
+	sketchybar --add space space."$sid" left \
+		--set space."$sid" "${space[@]}"
 done
 
 left_default=(
 	icon.color=0xFF7DCFFF
-	label.color=0xFFC0CAF5
+	icon.padding_left=6
+	label.color=0xFFA9B1D6
+	label.padding_right=8
+	background.color=0xFF24283B
 )
 sketchybar --default "${left_default[@]}"
 
