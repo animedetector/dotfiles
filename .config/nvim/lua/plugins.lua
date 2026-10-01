@@ -9,7 +9,6 @@ end
 
 M.specs = {
 	gh("folke/tokyonight.nvim"),
-	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" },
 	gh("lewis6991/gitsigns.nvim"),
 	{ src = gh("saghen/blink.cmp"), version = vim.version.range("1") },
 	gh("ibhagwan/fzf-lua"),

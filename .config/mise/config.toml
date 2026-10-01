@@ -1,8 +1,10 @@
 [tools]
+go = "1.27"
+lua = "latest"
+neovim = "latest"
 node = "24"
 python = "3.14"
 uv = "latest"
-zig = "0.15"
 
 [settings]
 experimental = true
